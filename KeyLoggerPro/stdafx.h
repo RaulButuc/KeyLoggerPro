@@ -9,3 +9,9 @@
 #include <malloc.h>
 #include <memory.h>
 #include <tchar.h>
+
+#include <map>
+#include <string>
+
+#include "KeyPair.h"
+#include "Keys.h"
