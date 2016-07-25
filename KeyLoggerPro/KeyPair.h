@@ -7,6 +7,9 @@
 
 #pragma once
 
+#include "stdafx.h"
+#include <string>
+
 namespace KeyLoggerPro {
 
   class KeyPair {
