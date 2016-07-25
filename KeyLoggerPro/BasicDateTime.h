@@ -1,6 +1,15 @@
+/**
+ * BasicDateTime.h
+ *
+ * @author Raul Butuc
+ * @version 1.0.0 - 25/07/2016
+ */
+
 #pragma once
 
 #include "stdafx.h"
+#include <ctime>
+#include <sstream>
 
 namespace KeyLoggerPro {
 

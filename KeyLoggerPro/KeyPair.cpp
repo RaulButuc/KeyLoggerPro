@@ -6,6 +6,7 @@
  */
 
 #include "stdafx.h"
+#include "KeyPair.h"
 
 namespace KeyLoggerPro {
 

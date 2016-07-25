@@ -1,3 +1,10 @@
+/**
+ * BasicDateTime.cpp
+ *
+ * @author Raul Butuc
+ * @version 1.0.0 - 25/07/2016
+ */
+
 #include "stdafx.h"
 #include "BasicDateTime.h"
 
