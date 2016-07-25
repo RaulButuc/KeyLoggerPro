@@ -4,8 +4,10 @@
 namespace KeyLoggerPro {
 
   BasicDateTime::BasicDateTime(void) {
-    time(&m_DeltaT);
-    struct tm* tmInf = localtime(&m_DeltaT);
+    struct tm* tmInf = new tm();
+
+    time(&m_DeltaT);    
+    localtime_s(tmInf, &m_DeltaT);
 
     m_Day = tmInf->tm_mday;
     m_Month = tmInf->tm_mon;
