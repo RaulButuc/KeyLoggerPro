@@ -7,22 +7,26 @@
 
 #include "stdafx.h"
 
-KeyPair::KeyPair(const std::string& vKey = "",
-                 const std::string& name = "")
-    : m_vKey(vKey), m_Name(name) { }
+namespace KeyLoggerPro {
 
-std::string KeyPair::getVKey(void) {
-  return m_vKey;
-}
+  KeyPair::KeyPair(const std::string& vKey = "",
+                   const std::string& name = "")
+      : m_vKey(vKey), m_Name(name) { }
 
-std::string KeyPair::getName(void) {
-  return m_Name;
-}
+  std::string KeyPair::getVKey(void) {
+    return m_vKey;
+  }
 
-void KeyPair::setVKey(const std::string& vKey = "") {
-  this->m_vKey = vKey;
-}
+  std::string KeyPair::getName(void) {
+    return m_Name;
+  }
 
-void KeyPair::setName(const std::string& name = "") {
-  this->m_Name = name;
+  void KeyPair::setVKey(const std::string& vKey = "") {
+    this->m_vKey = vKey;
+  }
+
+  void KeyPair::setName(const std::string& name = "") {
+    this->m_Name = name;
+  }
+
 }

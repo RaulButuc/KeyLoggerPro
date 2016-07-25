@@ -11,7 +11,11 @@
 #include <tchar.h>
 
 #include <map>
+#include <ctime>
 #include <string>
+#include <sstream>
 
+#include "Missing.h"
 #include "KeyPair.h"
 #include "Keys.h"
+#include "BasicDateTime.h"

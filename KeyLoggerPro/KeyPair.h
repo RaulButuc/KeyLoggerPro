@@ -7,18 +7,22 @@
 
 #pragma once
 
-class KeyPair {
+namespace KeyLoggerPro {
 
-  private:
-    std::string m_vKey;
-    std::string m_Name;
+  class KeyPair {
 
-  public:
-    KeyPair(const std::string&, const std::string&);
+    private:
+      std::string m_vKey;
+      std::string m_Name;
 
-    std::string getVKey(void);
-    std::string getName(void);
-    void setVKey(const std::string&);
-    void setName(const std::string&);
+    public:
+      KeyPair(const std::string&, const std::string&);
 
-};
+      std::string getVKey(void);
+      std::string getName(void);
+      void setVKey(const std::string&);
+      void setName(const std::string&);
+
+  };
+
+}
