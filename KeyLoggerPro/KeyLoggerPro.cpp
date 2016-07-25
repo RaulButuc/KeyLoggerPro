@@ -17,7 +17,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
   HACCEL hAccelTable =
     LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_KEYLOGGERPRO));
-
+  
   MSG msg;
 
   while (GetMessage(&msg, nullptr, 0, 0)) {
@@ -27,5 +27,5 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     }
   }
 
-  return (int)msg.wParam;
+  return static_cast<int>(msg.wParam);
 }
