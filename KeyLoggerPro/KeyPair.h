@@ -21,8 +21,8 @@ namespace KeyLoggerPro {
     public:
       KeyPair(const std::string&, const std::string&);
 
-      std::string getVKey(void);
-      std::string getName(void);
+      std::string getVKey(void) const;
+      std::string getName(void) const;
       void setVKey(const std::string&);
       void setName(const std::string&);
 

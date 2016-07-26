@@ -2,7 +2,7 @@
  * BasicDateTime.h
  *
  * @author Raul Butuc
- * @version 1.0.0 - 25/07/2016
+ * @version 1.0.1 - 26/07/2016
  */
 
 #pragma once
@@ -29,6 +29,9 @@ namespace KeyLoggerPro {
       BasicDateTime(const short&, const short&, const short&);
       BasicDateTime(const short&, const short&, const short&, const short&, const short&, const short&);
 
+      BasicDateTime now(void) const;
+      std::string dateToString(void) const;
+
       short getDay(void) const;
       short getMonth(void) const;
       short getYear(void) const;
@@ -41,6 +44,7 @@ namespace KeyLoggerPro {
       void setHour(const short&);
       void setMinute(const short&);
       void setSecond(const short&);
+
   };
 
 }
