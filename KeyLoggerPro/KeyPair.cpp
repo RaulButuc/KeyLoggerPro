@@ -14,11 +14,11 @@ namespace KeyLoggerPro {
                    const std::string& name = "")
       : m_vKey(vKey), m_Name(name) { }
 
-  std::string KeyPair::getVKey(void) {
+  std::string KeyPair::getVKey(void) const {
     return m_vKey;
   }
 
-  std::string KeyPair::getName(void) {
+  std::string KeyPair::getName(void) const {
     return m_Name;
   }
 

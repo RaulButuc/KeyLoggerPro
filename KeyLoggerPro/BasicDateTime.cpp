@@ -2,7 +2,7 @@
  * BasicDateTime.cpp
  *
  * @author Raul Butuc
- * @version 1.0.0 - 25/07/2016
+ * @version 1.0.1 - 26/07/2016
  */
 
 #include "stdafx.h"
@@ -26,13 +26,26 @@ namespace KeyLoggerPro {
 
   BasicDateTime::BasicDateTime(const short &_day, const short &_month, const short &_year) :
       m_Day(_day), m_Month(_month), m_Year(_year) {
-    m_Hour = m_Minute = m_Second = -1;
+    m_Hour = m_Minute = m_Second = 0;
   }
 
   BasicDateTime::BasicDateTime(const short &_day, const short &_month, const short &_year,
       const short &_hour, const short &_minute, const short &_second) : 
       m_Day(_day), m_Month(_month), m_Year(_year),
       m_Hour(_hour), m_Minute(_minute), m_Second(_second) { }
+
+  BasicDateTime BasicDateTime::now(void) const {
+    return BasicDateTime();
+  }
+
+  std::string BasicDateTime::dateToString(void) const {
+    std::ostringstream outStream;
+
+    outStream << this->m_Day << "/" << this->m_Month << "/" << this->m_Year <<
+      " " << this->m_Hour << ":" << this->m_Minute << ":" << this->m_Second;
+
+    return outStream.str();
+  }
 
   short BasicDateTime::getDay(void) const {
     return this->m_Day;
