@@ -18,7 +18,7 @@ namespace KeyLoggerPro {
       std::fstream log;
 
     public:
-      Logger();
+      Logger(void);
 
       void write(const std::string&);
 
