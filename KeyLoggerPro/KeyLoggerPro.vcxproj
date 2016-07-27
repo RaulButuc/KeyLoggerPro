@@ -143,6 +143,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BasicDateTime.h" />
+    <ClInclude Include="Encoding.h" />
     <ClInclude Include="KeyPair.h" />
     <ClInclude Include="KeyLoggerPro.h" />
     <ClInclude Include="Keys.h" />
@@ -153,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BasicDateTime.cpp" />
+    <ClCompile Include="Encoding.cpp" />
     <ClCompile Include="KeyLoggerPro.cpp" />
     <ClCompile Include="KeyPair.cpp" />
     <ClCompile Include="Keys.cpp" />
