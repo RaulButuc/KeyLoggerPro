@@ -45,7 +45,7 @@
     <ClInclude Include="Logger.h">
       <Filter>Header Files\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="Encoding.h">
+    <ClInclude Include="Encryption.h">
       <Filter>Header Files\Utilities</Filter>
     </ClInclude>
   </ItemGroup>
@@ -68,7 +68,7 @@
     <ClCompile Include="Logger.cpp">
       <Filter>Source Files\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="Encoding.cpp">
+    <ClCompile Include="Encryption.cpp">
       <Filter>Source Files\Utilities</Filter>
     </ClCompile>
   </ItemGroup>
