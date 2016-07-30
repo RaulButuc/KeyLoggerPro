@@ -3,6 +3,7 @@ __An untraceable keylogger built from scratch in C++__
 
 The keylogger is:
 * Compatible with Windows Vista/7/8/10 (C++ Win32 app)
+* Bypassing all known antiviruses
 * Untraceable (hidden in the windows process list)
 * Logging all the keys pressed
 * Safely encrypting the log files
