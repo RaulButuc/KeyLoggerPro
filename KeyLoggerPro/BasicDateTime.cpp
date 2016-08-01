@@ -47,6 +47,15 @@ namespace KeyLoggerPro {
     return outStream.str();
   }
 
+  std::string BasicDateTime::shortDateToString(void) const {
+    std::ostringstream outStream;
+
+    outStream << this->m_Day << "_" << this->m_Month << "_" << this->m_Year <<
+      "__" << this->m_Hour << "_" << this->m_Minute << "_" << this->m_Second;
+
+    return outStream.str();
+  }
+
   short BasicDateTime::getDay(void) const {
     return this->m_Day;
   }
