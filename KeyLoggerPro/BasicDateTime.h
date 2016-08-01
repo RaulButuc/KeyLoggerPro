@@ -31,6 +31,7 @@ namespace KeyLoggerPro {
 
       BasicDateTime now(void) const;
       std::string dateToString(void) const;
+      std::string shortDateToString(void) const;
 
       short getDay(void) const;
       short getMonth(void) const;

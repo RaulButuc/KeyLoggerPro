@@ -294,9 +294,8 @@ namespace KeyLoggerPro {
 
   Encryption::Encryption(unsigned char *_ucKey, size_t _keysz, const Block &_oChain) 
       : m_oChain0(_oChain), m_oChain(_oChain) {
-    if (_keysz < 1) {
+    if (_keysz < 1)
       throw std::exception("Incorrect key length");
-    }
 
     if (_keysz > 56)
       _keysz = 56;
