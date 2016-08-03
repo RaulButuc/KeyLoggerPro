@@ -292,16 +292,20 @@ namespace KeyLoggerPro {
     0xb74e6132, 0xce77e25b, 0x578fdfe3, 0x3ac372e6 }
   };
 
-  Encryption::Encryption(unsigned char *_ucKey, size_t _keysz, const Block &_oChain) 
-      : m_oChain0(_oChain), m_oChain(_oChain) {
+  Encryption::Encryption(unsigned char *_ucKey, size_t _keysz) {
+    const Block &_oChain = Block(0UL, 0UL);
+
+    m_oChain0 = _oChain;
+    m_oChain = _oChain;
+    
     if (_keysz < 1)
       throw std::exception("Incorrect key length");
 
     if (_keysz > 56)
       _keysz = 56;
-    
+
     unsigned char aucLocalKey[56];
-    
+
     memcpy(aucLocalKey, _ucKey, _keysz);
     memcpy(m_auiP, scm_auiInitP, sizeof m_auiP);
     memcpy(m_auiS, scm_auiInitS, sizeof m_auiS);
@@ -318,18 +322,18 @@ namespace KeyLoggerPro {
         x <<= 8;
         x |= *(p++);
         iCt++;
-        
+
         if (iCt == _keysz) {
           iCt = 0;
           p = aucLocalKey;
         }
       }
-      
+
       m_auiP[i++] ^= x;
     }
-    
+
     Block block(0UL, 0UL);
-    
+
     for (auto i = 0; i < 18; )
       encrypt(block), m_auiP[i++] = block.m_uil, m_auiP[i++] = block.m_uir;
     for (auto j = 0; j < 4; ++j)

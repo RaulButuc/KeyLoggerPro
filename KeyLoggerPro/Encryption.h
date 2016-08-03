@@ -21,28 +21,28 @@ namespace KeyLoggerPro {
 
   class Encryption {
 
-    private:
-      Block m_oChain0;
-      Block m_oChain;
-      unsigned int m_auiP[18];
-      unsigned int m_auiS[4][256];
-      static const unsigned int scm_auiInitP[18];
-      static const unsigned int scm_auiInitS[4][256];
+  private:
+    Block m_oChain0;
+    Block m_oChain;
+    unsigned int m_auiP[18];
+    unsigned int m_auiS[4][256];
+    static const unsigned int scm_auiInitP[18];
+    static const unsigned int scm_auiInitS[4][256];
 
-      unsigned int F(unsigned int);
-      void encrypt(Block&);
-      void decrypt(Block&);
+    unsigned int F(unsigned int);
+    void encrypt(Block&);
+    void decrypt(Block&);
 
-    public:
-      enum { ECB = 0, CBC = 1, CFB = 2 };
+  public:
+    enum { ECB = 0, CBC = 1, CFB = 2 };
 
-      Encryption(unsigned char*, size_t, const Block&);
+    Encryption(unsigned char*, size_t);
 
-      void resetChain();
-      void encrypt(unsigned char*, size_t, int);
-      void encrypt(const unsigned char*, unsigned char*, size_t, int);
-      void decrypt(unsigned char*, size_t, int);
-      void decrypt(const unsigned char*, unsigned char*, size_t, int);
+    void resetChain();
+    void encrypt(unsigned char*, size_t, int);
+    void encrypt(const unsigned char*, unsigned char*, size_t, int);
+    void decrypt(unsigned char*, size_t, int);
+    void decrypt(const unsigned char*, unsigned char*, size_t, int);
 
   };
 
@@ -51,7 +51,7 @@ namespace KeyLoggerPro {
   }
 
   inline unsigned int Encryption::F(unsigned int _ui) {
-    return ((m_auiS[0][Byte(_ui>>24)] + m_auiS[1][Byte(_ui>>16)]) ^ m_auiS[2][Byte(_ui >> 8)]) + m_auiS[3][Byte(_ui)];
+    return ((m_auiS[0][Byte(_ui >> 24)] + m_auiS[1][Byte(_ui >> 16)]) ^ m_auiS[2][Byte(_ui >> 8)]) + m_auiS[3][Byte(_ui)];
   }
 
 }
