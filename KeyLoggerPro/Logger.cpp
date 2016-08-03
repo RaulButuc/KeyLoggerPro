@@ -2,7 +2,7 @@
  * Logger.cpp
  *
  * @author Raul Butuc
- * @version 1.0.1 - 01/08/2016
+ * @version 1.0.2 - 03/08/2016
  */
 
 #include "stdafx.h"
